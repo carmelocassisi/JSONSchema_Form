@@ -24,14 +24,14 @@
 			"title": "Install Date Time",
 			"description": "Installing date and time",
 			"type": "string",
-			"format": "datetime-local"
+			"format": "datetime"
 		},
 		"remDateTime": {
 			"$id": "#/properties/remDateTime",
 			"title": "Remove Date Time",
 			"description": "Removing date and time",
 			"type": "string",
-			"format": "datetime-local"
+			"format": "datetime"
 		},
 		"location": {
 			"$id": "#/properties/location",

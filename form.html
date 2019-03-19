@@ -12,9 +12,11 @@
     <link rel='stylesheet' href='//cdn.jsdelivr.net/foundation/5.0.2/css/foundation.min.css'>
     <!-- Font Awesome icons (Bootstrap, Foundation, and jQueryUI also supported) -->
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.1/css/all.css'>
-    <!-- Flatpickr -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.5.1/flatpickr.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.5.1/flatpickr.min.css" />
+    <!-- SCEditor -->
+    <!-- <script src="//cdn.jsdelivr.net/sceditor/1.4.3/jquery.sceditor.bbcode.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/sceditor/1.4.3/jquery.sceditor.default.min.css">
+    <script src="//cdn.jsdelivr.net/sceditor/1.4.3/jquery.sceditor.xhtml.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/sceditor/1.4.3/themes/default.min.css"> -->
     <!-- JSON Editor -->
     <script src="https://cdn.jsdelivr.net/npm/@json-editor/json-editor@latest/dist/jsoneditor.min.js"></script>
     <style type="text/css">
@@ -38,6 +40,56 @@
       // Set the default CSS theme and icon library globally
       JSONEditor.defaults.theme = 'bootstrap4';
       JSONEditor.defaults.iconlib = 'fontawesome5';
+
+      // Custom editor
+      /*
+      JSONEditor.defaults.editors.dateTime = JSONEditor.defaults.editors.string.extend({
+          getValue: function() {
+
+              function getTimeZone() {
+                  var offset = new Date().getTimezoneOffset(), o = Math.abs(offset);
+                  return (offset < 0 ? "+" : "-") + ("00" + Math.floor(o / 60)).slice(-2) + ":" + ("00" + (o % 60)).slice(-2);
+              }
+
+              return this.value+getTimeZone();
+          },
+
+          setValue: function(val) {
+
+              // strip timeZone
+              var stripedDateTime = val.substring(0, val.lastIndexOf("+"));
+
+
+              if(this.value !== stripedDateTime) {
+                  this.value = stripedDateTime;
+                  this.input.value = this.value;
+                  this.refreshPreview();
+                  this.onChange();
+              }
+          },
+
+          build: function () {
+            this._super();
+            defaultDate = new Date()
+            $(this.input).datetimepicker({
+                format: 'YYYY-MM-DD HH:mm Z',
+                defaultDate: defaultDate
+            })
+            .on('changeDate', function () {
+                var path = $(this).prop("name").replace(/\[/g, ".").replace(/\]/g, "");
+                editor.getEditor(path).setValue($(this).val());
+            });
+          }
+      });
+
+      // Instruct the json-editor to use the custom datetime-editor.
+      JSONEditor.defaults.resolvers.unshift(function(schema) {
+          if(schema.type === "string" && schema.format === "datetime") {
+              return "dateTime";
+          }
+
+      });
+      */
 
       var starting_value = {}; // set a default value
 
