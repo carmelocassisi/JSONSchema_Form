@@ -8,12 +8,7 @@
 			"$id": "#/properties/datetime",
 			"title": "Datetime",
 			"type": "string",
-			"format": "datetime",
-			"options": {
-				"inputAttributes": {
-					"placeholder": "YYYY-MM-DD hh:mm:ss"
-				}
-			}
+			"format": "datetime-local"
 		},
 		"body": {
 			"$id": "#/properties/body",
@@ -22,6 +17,16 @@
 			"format": "html",
 			"options": {
 				"wysiwyg": true
+			}
+		},
+		"pictures": {
+			"$id": "#/properties/pictures",
+			"title": "Pictures",
+			"type": "array",
+			"items": {
+				"$id": "#/properties/pictures/items",
+				"title": "Picture",
+				"$ref": "/schemas/picture_schema.json"
 			}
 		}
 	}

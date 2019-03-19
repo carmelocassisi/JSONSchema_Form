@@ -11,16 +11,24 @@
     <!-- Foundation CSS framework (Bootstrap and jQueryUI also supported) -->
     <link rel='stylesheet' href='//cdn.jsdelivr.net/foundation/5.0.2/css/foundation.min.css'>
     <!-- Font Awesome icons (Bootstrap, Foundation, and jQueryUI also supported) -->
-    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.1/css/all.css'>
+    <!-- Flatpickr -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.5.1/flatpickr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.5.1/flatpickr.min.css" />
     <!-- JSON Editor -->
     <script src="https://cdn.jsdelivr.net/npm/@json-editor/json-editor@latest/dist/jsoneditor.min.js"></script>
+    <style type="text/css">
+      body {
+        margin: 1em;
+      }
+    </style>
   </head>
   <body>
     <h1>PNet Node's Editor</h1>
     <div class='row'>
       <div class='medium-12-columns'>
-        <button id='submit' class='tiny'>Submit</button>
-        <button id='restore' class='secondary tiny'>Restore to Default</button>
+        <button id='submit' class='btn btn-primary'>Submit</button>
+        <button id='restore' class='btn btn-secondary'>Restore to Default</button>
         <span id='valid_indicator' class='label'></span>
       </div>
     </div>
@@ -29,7 +37,7 @@
     <script>
       // Set the default CSS theme and icon library globally
       JSONEditor.defaults.theme = 'bootstrap4';
-      JSONEditor.defaults.iconlib = 'fontawesome4';
+      JSONEditor.defaults.iconlib = 'fontawesome5';
 
       var starting_value = {}; // set a default value
 

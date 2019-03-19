@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "/schemas/node.schema.json",
+	"$id": "/schemas/node_schema.json",
 	"title": "Node",
 	"description": "A node of the permanent net",
 	"type": "object",
@@ -16,31 +16,22 @@
 			"$id": "#/properties/idNet",
 			"title": "IDNet",
 			"description": "ID of the node's belonging network",
-			"type": "number"
+			"type": "number",
+			"default": 1
 		},
 		"installDateTime": {
 			"$id": "#/properties/installDateTime",
 			"title": "Install Date Time",
 			"description": "Installing date and time",
 			"type": "string",
-			"format": "datetime",
-			"options": {
-				"inputAttributes": {
-					"placeholder": "YYYY-MM-DD hh:mm:ss"
-				}
-			}
+			"format": "datetime-local"
 		},
 		"remDateTime": {
 			"$id": "#/properties/remDateTime",
 			"title": "Remove Date Time",
 			"description": "Removing date and time",
 			"type": "string",
-			"format": "datetime",
-			"options": {
-				"inputAttributes": {
-					"placeholder": "YYYY-MM-DD hh:mm:ss"
-				}
-			}
+			"format": "datetime-local"
 		},
 		"location": {
 			"$id": "#/properties/location",
