@@ -1,0 +1,28 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "/schemas/note_schema.json",
+	"title": "Note",
+	"type": "object",
+	"properties": {
+		"datetime": {
+			"$id": "#/properties/datetime",
+			"title": "Datetime",
+			"type": "string",
+			"format": "datetime",
+			"options": {
+				"inputAttributes": {
+					"placeholder": "YYYY-MM-DD hh:mm:ss"
+				}
+			}
+		},
+		"body": {
+			"$id": "#/properties/body",
+			"title": "Body",
+			"type": "string",
+			"format": "html",
+			"options": {
+				"wysiwyg": true
+			}
+		}
+	}
+}

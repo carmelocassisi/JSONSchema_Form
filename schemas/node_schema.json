@@ -1,0 +1,82 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "/schemas/node.schema.json",
+	"title": "Node",
+	"description": "A node of the permanent net",
+	"type": "object",
+	"required": ["id", "idNet", "location", "channels"],
+	"properties": {
+		"id": {
+			"$id": "#/properties/id",
+			"title": "IDNode",
+			"description": "Unique name",
+			"type": "string"
+		},
+		"idNet": {
+			"$id": "#/properties/idNet",
+			"title": "IDNet",
+			"description": "ID of the node's belonging network",
+			"type": "number"
+		},
+		"installDateTime": {
+			"$id": "#/properties/installDateTime",
+			"title": "Install Date Time",
+			"description": "Installing date and time",
+			"type": "string",
+			"format": "datetime",
+			"options": {
+				"inputAttributes": {
+					"placeholder": "YYYY-MM-DD hh:mm:ss"
+				}
+			}
+		},
+		"remDateTime": {
+			"$id": "#/properties/remDateTime",
+			"title": "Remove Date Time",
+			"description": "Removing date and time",
+			"type": "string",
+			"format": "datetime",
+			"options": {
+				"inputAttributes": {
+					"placeholder": "YYYY-MM-DD hh:mm:ss"
+				}
+			}
+		},
+		"location": {
+			"$id": "#/properties/location",
+			"title": "Location",
+			"description": "Geographical coordinates of the node",
+			"$ref": "/schemas/geographical-location.schema.json"
+		},
+		"channels": {
+			"$id": "#/properties/channels",
+			"title": "Channels List",
+			"description": "List of the channels",
+			"type": "array",
+			"items": {
+				"$id": "#/properties/channels/items",
+				"title": "Channel",
+				"$ref": "/schemas/channel_schema.json"
+			},
+			"minItems": 1,
+			"uniqueItems": true
+		},
+		"additionalProperties": {
+			"$id": "#/properties/additionalProperties",
+			"title": "Additional Properties",
+			"description": "Customization of the node",
+			"type": "object"
+		},
+		"notes": {
+			"$id": "#/properties/notes",
+			"title": "Notes",
+			"description": "Notes",
+			"type": "array",
+			"items": {
+				"$id": "#/properties/notes/items",
+				"title": "Note",
+				"$ref": "/schemas/note_schema.json"
+			}
+		}
+	}
+}
