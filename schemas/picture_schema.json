@@ -12,18 +12,11 @@
             "media": {
                 "binaryEncoding": "base64",
                 "type": "img/png"
-            },
-            "options": {
-                "grid_columns": 6,
-                "multiple": true
             }
         },
         "description": {
             "type": "string",
-            "title": "Description",
-            "options": {
-                "grid_columns": 6
-            }
+            "title": "Description"
         }
     }
 }
